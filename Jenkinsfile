@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Instalar dependencias') {
             steps {
+                sh 'apt-get update && apt-get install -y libatomic1 || true'
                 sh 'npm install'
             }
         }
